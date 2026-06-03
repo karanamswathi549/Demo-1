@@ -1,0 +1,136 @@
+##What is the purpose of exception handling in Python? Explain the role of try and except.
+Exception handling helps the program continue running even when an error occurs.try checks for errors, and except handles them without stopping the program
+
+
+##What is the difference between a Class and an Object? Explain with a real-world example.
+A class is a blueprint,object is the real thing created from that blueprint.
+#Ex:Car is a class and BMW is an object
+
+##3. What are the different file modes in Python (r, w, a)? Explain their usage.
+r is used to read a file, w is used to write or create a file, a is add new data at the end of an existing file without deleting the old data
+
+
+##Create a file named students.txt and write 5 student names into it.
+with open("students.txt", "w") as file:
+
+    file.write("Sriram\n")
+    file.write("Deekshith\n")
+    file.write("Lakshman\n")
+    file.write("Ramesh\n")
+    file.write("Venkat\n")
+
+print("File created")
+
+##5. File Reading Read the contents of students.txt and print each student name on a new line.
+with open("students.txt", "r") as file:
+
+    content = file.read()
+
+    print(content)
+
+##6. Exception Handling
+#Write a program that accepts a number from the user and handles invalid input using try-except.
+#Example:
+#python Enter a number: abc Invalid Input
+try:
+
+    number = int(input("Enter a number: "))
+
+    print("Given number:", number)
+
+except:
+
+    print("Invalid Input")
+
+##7. Division Calculator
+#Accept two numbers from the user and perform division.
+#Handle:
+#- Invalid input
+#- Division by zero
+try:
+
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    result = num1 / num2
+
+    print("Result:", result)
+
+except ZeroDivisionError:
+
+    print("we can't divide by zero")
+
+except:
+
+    print("Invalid Input")
+
+##8. Create a Car Class
+#Create a class named Car with:
+#- brand
+#- color
+#Create 3 car objects and print their details.
+class Car:
+
+    def __init__(self, brand, color):
+
+        self.brand = brand
+        self.color = color
+
+
+car1 = Car("BMW", "White")
+car2 = Car("Honda", "Black")
+car3 = Car("Tesla", "Red")
+
+print(car1.brand, car1.color)
+print(car2.brand, car2.color)
+print(car3.brand, car3.color)
+
+##Create a Patient Class
+#Create a class named Patient with:
+#- patient_name
+#- doctor_name
+#- bill_amount
+#Create 5 patient objects and print their details.
+class Patient:
+
+    def __init__(self, patient_name, doctor_name, bill_amount):
+
+        self.patient_name = patient_name
+        self.doctor_name = doctor_name
+        self.bill_amount = bill_amount
+
+
+patient1 = Patient("John", "Dr. Smith", 500)
+patient2 = Patient("Mary", "Dr. Brown", 750)
+patient3 = Patient("David", "Dr. Wilson", 1200)
+patient4 = Patient("Dad", "Dr. Taylor", 900)
+patient5 = Patient("Ben", "Dr. Johnson", 650)
+
+print(patient1.patient_name, patient1.doctor_name, patient1.bill_amount)
+print(patient2.patient_name, patient2.doctor_name, patient2.bill_amount)
+print(patient3.patient_name, patient3.doctor_name, patient3.bill_amount)
+print(patient4.patient_name, patient4.doctor_name, patient4.bill_amount)
+print(patient5.patient_name, patient5.doctor_name, patient5.bill_amount)
+
+##Transaction File Processor
+#Create a file named transactions.txt containing transaction amounts.
+#Read the file and:
+#- Print all transaction amounts
+#- Calculate total transaction value
+#- Handle any file-related exceptions using try-except
+try:
+
+    with open("transactions.txt", "w") as file:
+
+        file.write("1000\n")
+        file.write("2500\n")
+
+    with open("transactions.txt", "r") as file:
+
+        ???????
+
+except FileNotFoundError:
+
+    print("File not found")
+
+        
